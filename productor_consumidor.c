@@ -1,19 +1,3 @@
-/*
- * Problema del productor-consumidor con buffer acotado
- * Sistemas Operativos - Comunicacion de Procesos
- *
- * Dos productores y dos consumidores (hilos POSIX) comparten un buffer
- * circular. La sincronizacion usa cuatro semaforos:
- *
- *   empty   = N  cuenta los espacios vacios del buffer
- *   full    = 0  cuenta los espacios llenos del buffer
- *   mutexP  = 1  exclusion mutua entre productores (protege rear)
- *   mutexC  = 1  exclusion mutua entre consumidores (protege front)
- *
- * Compilar: gcc -Wall -Wextra -pthread productor_consumidor.c -o productor_consumidor
- * Ejecutar: ./productor_consumidor
- */
-
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,10 +10,6 @@
 #define ITEMS_POR_HILO   10     /* Elementos que produce o consume cada hilo */
 #define MAX_ESPERA_US    200000 /* Pausa aleatoria maxima: 0.2 s */
 
-/*
- * Operaciones P y V. macOS no implementa sem_init (semaforos sin nombre),
- * por lo que ahi se usan los semaforos de Grand Central Dispatch.
- */
 #ifdef __APPLE__
 #include <dispatch/dispatch.h>
 typedef dispatch_semaphore_t semaforo_t;
