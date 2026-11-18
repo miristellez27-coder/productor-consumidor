@@ -1,0 +1,49 @@
+Productor-consumidor: 2 productores, 2 consumidores, buffer de 5 espacios
+
+Productor 2 deposita 201 en buf[0]
+    Consumidor 1 extrae 201 de buf[0]
+Productor 1 deposita 101 en buf[1]
+    Consumidor 2 extrae 101 de buf[1]
+Productor 2 deposita 202 en buf[2]
+    Consumidor 2 extrae 202 de buf[2]
+Productor 1 deposita 102 en buf[3]
+    Consumidor 1 extrae 102 de buf[3]
+Productor 2 deposita 203 en buf[4]
+Productor 1 deposita 103 en buf[0]
+    Consumidor 2 extrae 203 de buf[4]
+Productor 2 deposita 204 en buf[1]
+Productor 2 deposita 205 en buf[2]
+Productor 1 deposita 104 en buf[3]
+Productor 2 deposita 206 en buf[4]
+    Consumidor 2 extrae 103 de buf[0]
+    Consumidor 2 extrae 204 de buf[1]
+    Consumidor 2 extrae 205 de buf[2]
+Productor 2 deposita 207 en buf[0]
+    Consumidor 1 extrae 104 de buf[3]
+Productor 1 deposita 105 en buf[1]
+Productor 2 deposita 208 en buf[2]
+    Consumidor 1 extrae 206 de buf[4]
+    Consumidor 2 extrae 207 de buf[0]
+Productor 1 deposita 106 en buf[3]
+Productor 1 deposita 107 en buf[4]
+    Consumidor 2 extrae 105 de buf[1]
+Productor 2 deposita 209 en buf[0]
+    Consumidor 1 extrae 208 de buf[2]
+    Consumidor 1 extrae 106 de buf[3]
+    Consumidor 2 extrae 107 de buf[4]
+Productor 1 deposita 108 en buf[1]
+Productor 2 deposita 210 en buf[2]
+    Consumidor 1 extrae 209 de buf[0]
+Productor 1 deposita 109 en buf[3]
+    Consumidor 2 extrae 108 de buf[1]
+Productor 1 deposita 110 en buf[4]
+    Consumidor 1 extrae 210 de buf[2]
+    Consumidor 1 extrae 109 de buf[3]
+    Consumidor 1 extrae 110 de buf[4]
+
+Elementos producidos: 20 | suma: 3110
+Elementos consumidos: 20 | suma: 3110
+
+Verificacion:
+Correcto: todos los elementos fueron consumidos.
+Todos los hilos han terminado.
